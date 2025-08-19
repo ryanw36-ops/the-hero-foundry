@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+ we are using cursor. This project will only use cursor so all of our code should be geared toward cursor.

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "archon": {
+      "command": "python",
+      "args": ["archon-mcp-simple.py"],
+      "env": {
+        "PYTHONPATH": "."
+      }
+    }
+  }
+}
+

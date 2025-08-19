@@ -1,0 +1,4 @@
+---
+alwaysApply: true
+---
+When we use python in our code we will always specify that we are using python 3.11

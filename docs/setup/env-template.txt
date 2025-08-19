@@ -1,0 +1,178 @@
+# =============================================================================
+# The Hero Foundry - Development Environment Configuration
+# =============================================================================
+# Copy this file to .env and update the values as needed
+# cp env-template.txt .env
+
+# =============================================================================
+# Application Settings
+# =============================================================================
+ENVIRONMENT=development
+DEBUG=true
+LOG_LEVEL=INFO
+APP_NAME=The Hero Foundry
+APP_VERSION=2.0.0
+
+# =============================================================================
+# Server Configuration
+# =============================================================================
+BACKEND_PORT=8000
+FRONTEND_PORT=3000
+DESKTOP_DEV_MODE=true
+
+# =============================================================================
+# Database Configuration
+# =============================================================================
+# PostgreSQL (Primary Database)
+DATABASE_URL=postgresql://hero_foundry:password@localhost:5432/hero_foundry
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=hero_foundry
+POSTGRES_USER=hero_foundry
+POSTGRES_PASSWORD=password
+
+# Redis (Caching & Sessions)
+REDIS_URL=redis://localhost:6379
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_DB=0
+REDIS_PASSWORD=
+
+# =============================================================================
+# AI Provider Configuration
+# =============================================================================
+# OpenAI (Primary AI Provider)
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4-turbo-preview
+OPENAI_MAX_TOKENS=4000
+OPENAI_TEMPERATURE=0.7
+
+# Anthropic Claude (Alternative AI Provider)
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+ANTHROPIC_MODEL=claude-3-sonnet-20240229
+ANTHROPIC_MAX_TOKENS=4000
+
+# AI Provider Selection (openai, anthropic, local)
+AI_PROVIDER=openai
+AI_FALLBACK_PROVIDER=anthropic
+
+# =============================================================================
+# Authentication & Security
+# =============================================================================
+# JWT Configuration
+JWT_SECRET_KEY=your-super-secret-jwt-key-change-in-production
+JWT_ALGORITHM=HS256
+JWT_ACCESS_TOKEN_EXPIRE_MINUTES=30
+JWT_REFRESH_TOKEN_EXPIRE_DAYS=7
+
+# Security Settings
+CORS_ORIGINS=["http://localhost:3000", "http://localhost:8000"]
+SECURE_COOKIES=false
+SESSION_SECRET=your-session-secret-key-change-in-production
+
+# =============================================================================
+# File Storage & Content
+# =============================================================================
+# Local File Storage
+STORAGE_TYPE=local
+STORAGE_PATH=./storage
+UPLOAD_MAX_SIZE=10485760  # 10MB in bytes
+
+# Content Directories
+CONTENT_PATH=./content
+RULESETS_PATH=./content/rulesets
+HOMEBREW_PATH=./content/homebrew
+EXPORT_PATH=./exports
+
+# =============================================================================
+# Development Tools
+# =============================================================================
+# Database Management
+PGADMIN_EMAIL=admin@herofoundry.local
+PGADMIN_PASSWORD=admin
+
+# Redis Management
+REDIS_COMMANDER_USER=admin
+REDIS_COMMANDER_PASSWORD=admin
+
+# Email Testing (MailHog)
+SMTP_HOST=localhost
+SMTP_PORT=1025
+SMTP_USERNAME=
+SMTP_PASSWORD=
+
+# =============================================================================
+# Monitoring & Logging
+# =============================================================================
+# Logging Configuration
+LOG_FORMAT=json
+LOG_FILE=./logs/app.log
+LOG_MAX_SIZE=10485760  # 10MB
+LOG_BACKUP_COUNT=5
+
+# Performance Monitoring
+ENABLE_METRICS=true
+METRICS_PORT=9090
+ENABLE_PROFILING=false
+
+# =============================================================================
+# Testing Configuration
+# =============================================================================
+# Test Database
+TEST_DATABASE_URL=postgresql://hero_foundry:password@localhost:5432/hero_foundry_test
+TEST_REDIS_URL=redis://localhost:6379/1
+
+# Test Settings
+TEST_TIMEOUT=30
+TEST_COVERAGE_THRESHOLD=80
+ENABLE_INTEGRATION_TESTS=true
+ENABLE_E2E_TESTS=true
+
+# =============================================================================
+# External Services (Optional)
+# =============================================================================
+# Supabase (Alternative to local PostgreSQL)
+SUPABASE_URL=your_supabase_url_here
+SUPABASE_ANON_KEY=your_supabase_anon_key_here
+SUPABASE_SERVICE_KEY=your_supabase_service_key_here
+
+# GitHub (for content updates)
+GITHUB_TOKEN=your_github_token_here
+GITHUB_REPO=your_github_repo_here
+
+# Discord Webhook (for notifications)
+DISCORD_WEBHOOK_URL=your_discord_webhook_url_here
+
+# =============================================================================
+# Feature Flags
+# =============================================================================
+# Enable/disable features for development
+ENABLE_AI_ASSISTANT=true
+ENABLE_HOMEBREW_BUILDER=true
+ENABLE_EXPORT_SYSTEM=true
+ENABLE_LEVEL_UP_ASSISTANT=true
+ENABLE_BALANCE_SYSTEM=true
+
+# Development Features
+ENABLE_HOT_RELOAD=true
+ENABLE_DEBUG_PANEL=true
+ENABLE_PERFORMANCE_MONITORING=true
+ENABLE_ERROR_REPORTING=false
+
+# =============================================================================
+# Local Development Overrides
+# =============================================================================
+# Override settings for local development
+LOCAL_DEVELOPMENT=true
+SKIP_AI_VALIDATION=false
+MOCK_EXTERNAL_APIS=false
+ENABLE_FAST_REFRESH=true
+
+# =============================================================================
+# Notes
+# =============================================================================
+# 1. Never commit .env files to version control
+# 2. Update values based on your local setup
+# 3. Use strong, unique secrets in production
+# 4. Test all features after configuration changes
+# 5. Keep this file updated with new environment variables
