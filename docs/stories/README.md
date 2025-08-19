@@ -82,18 +82,35 @@ This directory contains the complete epic breakdown and user stories for The Her
 
 ---
 
+### Epic 6: Quality Assurance & Technical Debt (NEW - CRITICAL)
+**Priority:** HIGH  
+**Story Points:** 25  
+**Dependencies:** All previous epics (addresses systemic issues)  
+
+**Stories:**
+- [6.1: Material-UI Grid Compatibility Issues Resolution](6.1.material-ui-grid-compatibility.md) - Fix Grid component issues
+- [6.2: Tauri File System Integration Implementation](6.2.tauri-file-system-integration.md) - Real file system integration
+- [6.3: Comprehensive Automated Testing Suite Implementation](6.3.comprehensive-automated-testing-suite.md) - 90%+ test coverage
+- [6.4: Integration Tests Implementation](6.4.integration-tests-implementation.md) - Component interaction validation
+- [6.5: Performance Testing Implementation](6.5.performance-testing-implementation.md) - Cross-platform performance validation
+
+**Goal:** Address critical technical debt and establish quality foundation
+
+---
+
 ## Sprint Planning Summary
 
-**Total Project Effort:** 120 story points  
+**Total Project Effort:** 145 story points  
 **Sprint Velocity:** 7 points per week  
-**Total Duration:** 17 weeks (16 sprints + 1 week buffer)
+**Total Duration:** 21 weeks (20 sprints + 1 week buffer)
 
 **Sprint Breakdown:**
-- **Sprints 1-2:** Foundation (Epic 1) - 25 points
+- **Sprints 1-2:** Foundation (Epic 1) - 21 points
 - **Sprints 3-5:** Character Creation (Epic 2) - 25 points  
-- **Sprints 6-8:** AI Integration (Epic 3) - 25 points
-- **Sprints 9-11:** Homebrew & Balance (Epic 4) - 25 points
-- **Sprints 12-13:** Export & Polish (Epic 5) - 20 points
+- **Sprints 6-8:** AI Integration (Epic 3) - 26 points
+- **Sprints 9-11:** Homebrew & Balance (Epic 4) - 24 points
+- **Sprints 12-13:** Export & Polish (Epic 5) - 24 points
+- **Sprints 14-16:** Quality Assurance & Technical Debt (Epic 6) - 25 points
 
 ## Story Breakdown by Epic
 
@@ -121,6 +138,11 @@ This directory contains the complete epic breakdown and user stories for The Her
 - **Story Points:** 8, 5, 4, 3
 - **Estimated Time:** 1-3 days each
 - **Dependencies:** Epic 2 completion required
+
+### Epic 6: Quality Assurance & Technical Debt (5 stories) - NEW
+- **Story Points:** 5, 5, 5, 5, 5
+- **Estimated Time:** 3-5 days each (complex technical work)
+- **Dependencies:** All previous epics completion required
 
 ## Story Template
 All stories follow the standard story template format with:

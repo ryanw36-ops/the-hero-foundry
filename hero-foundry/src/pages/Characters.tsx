@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { 
-  Typography, 
-  Card, 
-  CardContent, 
-  Button, 
+import {
+  Typography,
+  Card,
+  CardContent,
+  Button,
   Box,
   List,
   ListItem,
@@ -18,11 +18,13 @@ import {
   Alert,
   CircularProgress
 } from '@mui/material';
-import { 
+import {
   Add as AddIcon,
   Edit as EditIcon,
-  Delete as DeleteIcon
+  Delete as DeleteIcon,
+  AutoAwesome as WizardIcon
 } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 import { useFileStorage } from '../hooks/useFileStorage';
 import { useLogger } from '../hooks/useLogger';
 
@@ -123,16 +125,26 @@ const Characters: React.FC = () => {
   return (
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-        <Typography variant="h4">
+                <Typography variant="h4">
           Characters
         </Typography>
-        <Button 
-          variant="contained" 
-          startIcon={<AddIcon />}
-          onClick={() => setCreateDialogOpen(true)}
-        >
-          Create New Character
-        </Button>
+        <Box sx={{ display: 'flex', gap: 2 }}>
+          <Button
+            variant="contained"
+            startIcon={<WizardIcon />}
+            component={Link}
+            to="/characters/create"
+          >
+            Character Wizard
+          </Button>
+          <Button
+            variant="outlined"
+            startIcon={<AddIcon />}
+            onClick={() => setCreateDialogOpen(true)}
+          >
+            Quick Create
+          </Button>
+        </Box>
       </Box>
 
       {error && (

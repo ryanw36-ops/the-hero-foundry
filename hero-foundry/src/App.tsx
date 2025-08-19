@@ -5,18 +5,19 @@ import Home from './pages/Home'
 import Characters from './pages/Characters'
 import Rules from './pages/Rules'
 import Settings from './pages/Settings'
+import Validation from './pages/Validation'
+import CharacterWizard from './components/CharacterWizard/CharacterWizard'
 import ErrorBoundary from './components/ErrorBoundary'
 import { LoggerProvider } from './hooks/useLogger'
 
 function App() {
   const theme = createTheme({
     palette: {
-      mode: 'dark',
       primary: {
-        main: '#7c3aed',
+        main: '#5e35b1', // Deep Purple
       },
       secondary: {
-        main: '#f59e0b',
+        main: '#ffb300', // Amber
       },
     },
   })
@@ -30,7 +31,9 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/characters" element={<Characters />} />
+                <Route path="/characters/create" element={<CharacterWizard />} />
                 <Route path="/rules" element={<Rules />} />
+                <Route path="/validation" element={<Validation />} />
                 <Route path="/help" element={<div>Help Page - Coming Soon</div>} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>

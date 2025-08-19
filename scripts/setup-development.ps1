@@ -136,7 +136,7 @@ function Test-Docker {
 }
 
 # Function to create virtual environment
-function Setup-PythonEnv {
+function Initialize-PythonEnv {
     Write-Status "Setting up Python virtual environment..."
     
     if (-not (Test-Path ".venv")) {
@@ -165,7 +165,7 @@ function Setup-PythonEnv {
 }
 
 # Function to setup Node.js dependencies
-function Setup-NodeEnv {
+function Initialize-NodeEnv {
     Write-Status "Setting up Node.js environment..."
     
     if (Test-Path "package.json") {
@@ -179,7 +179,7 @@ function Setup-NodeEnv {
 }
 
 # Function to setup environment file
-function Setup-EnvFile {
+function Initialize-EnvFile {
     Write-Status "Setting up environment configuration..."
     
     if (-not (Test-Path ".env")) {
@@ -267,7 +267,7 @@ function Initialize-Database {
 }
 
 # Function to run tests
-function Run-Tests {
+function Invoke-Tests {
     Write-Status "Running environment tests..."
     
     if (Test-Path "scripts\test-database-connection.py") {
@@ -330,9 +330,9 @@ function Main {
     # Setup environment
     Write-Status "Setting up development environment..."
     
-    Setup-PythonEnv
-    Setup-NodeEnv
-    Setup-EnvFile
+    Initialize-PythonEnv
+    Initialize-NodeEnv
+    Initialize-EnvFile
     
     # Start services
     Write-Status "Starting development services..."
@@ -341,7 +341,7 @@ function Main {
     Initialize-Database
     
     # Run tests
-    Run-Tests
+    Invoke-Tests
     
     # Print next steps
     Write-NextSteps

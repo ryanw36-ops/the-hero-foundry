@@ -89,6 +89,13 @@ The Hero Foundry is built with a modern, scalable architecture:
 - **[Deployment Guide](docs/deployment.md)** - Production deployment instructions
 - **[Supabase Setup Guide](SUPABASE_SETUP.md)** - Complete Supabase configuration guide
 
+## 🧠 **Critical: Understanding Archon**
+
+**Archon is the foundation of our project success.** Every team member must understand and use Archon effectively.
+
+- **[Why Archon Matters](docs/archon-importance.md)** - **MUST READ** for all team members
+- **[QA Team Job Description](docs/job-descriptions/qa-team-member.md)** - Quality assurance role and responsibilities
+
 ## 🛠️ Development
 
 ### Code Standards

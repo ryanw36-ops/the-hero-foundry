@@ -6,7 +6,6 @@ import {
   Button, 
   Box 
 } from '@mui/material';
-import { Grid } from '@mui/material';
 import { 
   Person as PersonIcon,
   Book as BookIcon,
@@ -49,8 +48,8 @@ const Home: React.FC = () => {
         management system with AI assistance.
       </Typography>
       
-      <Grid container spacing={3} sx={{ mt: 2 }}>
-        <Grid item xs={12} md={6}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, mt: 2 }}>
+        <Box sx={{ flex: '1 1 300px', minWidth: 0 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -69,9 +68,9 @@ const Home: React.FC = () => {
               </Button>
             </CardContent>
           </Card>
-        </Grid>
+        </Box>
         
-        <Grid item xs={12} md={6}>
+        <Box sx={{ flex: '1 1 300px', minWidth: 0 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -90,9 +89,9 @@ const Home: React.FC = () => {
               </Button>
             </CardContent>
           </Card>
-        </Grid>
+        </Box>
         
-        <Grid item xs={12} md={6}>
+        <Box sx={{ flex: '1 1 300px', minWidth: 0 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -111,9 +110,9 @@ const Home: React.FC = () => {
               </Button>
             </CardContent>
           </Card>
-        </Grid>
+        </Box>
         
-        <Grid item xs={12} md={6}>
+        <Box sx={{ flex: '1 1 300px', minWidth: 0 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -132,8 +131,8 @@ const Home: React.FC = () => {
               </Button>
             </CardContent>
           </Card>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 };
