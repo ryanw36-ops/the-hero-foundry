@@ -1,27 +1,14 @@
-import { useState } from 'react'
-import { 
-  AppBar, 
-  Toolbar, 
-  Typography, 
-  Container, 
-  Box, 
-  Button, 
-  Card, 
-  CardContent,
-  Grid,
-  ThemeProvider,
-  createTheme
-} from '@mui/material'
-import { 
-  Person as PersonIcon,
-  Book as BookIcon,
-  Settings as SettingsIcon,
-  Help as HelpIcon
-} from '@mui/icons-material'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ThemeProvider, createTheme } from '@mui/material'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import Characters from './pages/Characters'
+import Rules from './pages/Rules'
+import Settings from './pages/Settings'
+import ErrorBoundary from './components/ErrorBoundary'
+import { LoggerProvider } from './hooks/useLogger'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('characters')
-
   const theme = createTheme({
     palette: {
       mode: 'dark',
@@ -36,81 +23,21 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              The Hero Foundry
-            </Typography>
-            <Typography variant="subtitle2" sx={{ mr: 2 }}>
-              D&D Character Creator
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        
-        <Container maxWidth="lg" sx={{ mt: 4 }}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={3}>
-              <Card>
-                <CardContent>
-                  <Typography variant="h6" gutterBottom>
-                    Quick Actions
-                  </Typography>
-                  <Button 
-                    variant="contained" 
-                    fullWidth 
-                    startIcon={<PersonIcon />}
-                    sx={{ mb: 1 }}
-                  >
-                    Create Character
-                  </Button>
-                  <Button 
-                    variant="outlined" 
-                    fullWidth 
-                    startIcon={<BookIcon />}
-                    sx={{ mb: 1 }}
-                  >
-                    View Characters
-                  </Button>
-                  <Button 
-                    variant="outlined" 
-                    fullWidth 
-                    startIcon={<HelpIcon />}
-                    sx={{ mb: 1 }}
-                  >
-                    Help Me
-                  </Button>
-                  <Button 
-                    variant="outlined" 
-                    fullWidth 
-                    startIcon={<SettingsIcon />}
-                  >
-                    Settings
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={9}>
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" gutterBottom>
-                    Welcome to The Hero Foundry
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Create, manage, and level up your D&D characters with ease. 
-                    This application provides a comprehensive character creation and 
-                    management system with AI assistance.
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Start by creating your first character or explore the available features.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
+      <ErrorBoundary>
+        <LoggerProvider>
+          <Router>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/characters" element={<Characters />} />
+                <Route path="/rules" element={<Rules />} />
+                <Route path="/help" element={<div>Help Page - Coming Soon</div>} />
+                <Route path="/settings" element={<Settings />} />
+              </Routes>
+            </Layout>
+          </Router>
+        </LoggerProvider>
+      </ErrorBoundary>
     </ThemeProvider>
   )
 }

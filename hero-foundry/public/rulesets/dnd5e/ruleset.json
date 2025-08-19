@@ -1,0 +1,33 @@
+{
+  "id": "dnd5e",
+  "name": "Dungeons & Dragons 5th Edition",
+  "version": "1.0.0",
+  "description": "Official D&D 5e ruleset with SRD content",
+  "author": "Wizards of the Coast",
+  "license": "OGL 1.0a",
+  "srd": true,
+  "supported": true,
+  "features": {
+    "races": ["human", "elf", "dwarf", "halfling", "dragonborn", "tiefling", "half-elf", "half-orc", "gnome"],
+    "classes": ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"],
+    "backgrounds": ["acolyte", "criminal", "folk-hero", "noble", "sage", "soldier"],
+    "ability_scores": ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"],
+    "skills": ["acrobatics", "animal-handling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medicine", "nature", "perception", "performance", "persuasion", "religion", "sleight-of-hand", "stealth", "survival"],
+    "proficiencies": ["armor", "weapons", "tools", "languages"],
+    "spellcasting": ["arcane", "divine", "primal"]
+  },
+  "rules": {
+    "ability_score_methods": ["standard_array", "point_buy", "roll_4d6_drop_lowest"],
+    "hit_die": "d6",
+    "proficiency_bonus": [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+    "multiclassing": true,
+    "feats": true,
+    "variant_rules": ["feats", "multiclassing", "flanking", "inspiration"]
+  },
+  "validation": {
+    "max_level": 20,
+    "ability_score_range": [1, 20],
+    "skill_proficiency_limit": 4,
+    "language_limit": 5
+  }
+}

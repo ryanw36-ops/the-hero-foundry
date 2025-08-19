@@ -1,0 +1,33 @@
+{
+  "id": "custom",
+  "name": "Custom Ruleset Template",
+  "version": "1.0.0",
+  "description": "Template for creating custom homebrew rulesets",
+  "author": "User Created",
+  "license": "Custom",
+  "srd": false,
+  "supported": true,
+  "features": {
+    "races": [],
+    "classes": [],
+    "backgrounds": [],
+    "ability_scores": ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"],
+    "skills": [],
+    "proficiencies": ["armor", "weapons", "tools", "languages"],
+    "spellcasting": []
+  },
+  "rules": {
+    "ability_score_methods": ["standard_array", "point_buy", "roll_4d6_drop_lowest"],
+    "hit_die": "d6",
+    "proficiency_bonus": [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+    "multiclassing": false,
+    "feats": false,
+    "variant_rules": []
+  },
+  "validation": {
+    "max_level": 20,
+    "ability_score_range": [1, 20],
+    "skill_proficiency_limit": 4,
+    "language_limit": 5
+  }
+}

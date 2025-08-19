@@ -1,0 +1,33 @@
+{
+  "id": "pathfinder2e",
+  "name": "Pathfinder 2nd Edition",
+  "version": "1.0.0",
+  "description": "Official Pathfinder 2e ruleset with SRD content",
+  "author": "Paizo Publishing",
+  "license": "OGL 1.0a",
+  "srd": true,
+  "supported": true,
+  "features": {
+    "ancestries": ["human", "elf", "dwarf", "halfling", "gnome", "goblin", "hobgoblin", "leshy", "lizardfolk", "catfolk", "kobold", "orc", "ratfolk", "tengu"],
+    "classes": ["alchemist", "barbarian", "bard", "champion", "cleric", "druid", "fighter", "gunslinger", "inventor", "investigator", "magus", "monk", "oracle", "psychic", "ranger", "rogue", "sorcerer", "summoner", "swashbuckler", "witch", "wizard"],
+    "backgrounds": ["acolyte", "acrobat", "animal-whisperer", "artisan", "barkeep", "barrister", "bounty-hunter", "charlatan", "criminal", "detective", "emissary", "entertainer", "farmhand", "field-medic", "fortune-teller", "gambler", "gladiator", "guard", "herbalist", "hunter", "laborer", "merchant", "miner", "noble", "nomad", "nurse", "pilot", "prisoner", "scholar", "scout", "sailor", "soldier", "street-urchin", "tattoo-artist", "teamster", "urchin"],
+    "ability_scores": ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"],
+    "skills": ["acrobatics", "arcana", "athletics", "crafting", "deception", "diplomacy", "intimidation", "lore", "medicine", "nature", "occultism", "performance", "religion", "society", "stealth", "survival", "thievery"],
+    "proficiencies": ["armor", "weapons", "tools", "languages"],
+    "spellcasting": ["arcane", "divine", "primal", "occult"]
+  },
+  "rules": {
+    "ability_score_methods": ["voluntary_flaws", "point_buy", "ancestry_boost"],
+    "hit_die": "d8",
+    "proficiency_bonus": [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8],
+    "multiclassing": true,
+    "feats": true,
+    "variant_rules": ["feats", "multiclassing", "free-archetype", "gradual-ability-boosts"]
+  },
+  "validation": {
+    "max_level": 20,
+    "ability_score_range": [1, 18],
+    "skill_proficiency_limit": 8,
+    "language_limit": 6
+  }
+}
